@@ -22,3 +22,42 @@ pip install speechrecognition pyaudio requests
 
 pyaudio is generally a bit tricky to install, i would advice following their own documentation.
 better yet create a venv and install your package their.
+
+### API Requests
+
+#### ESP32
+
+1. GET / - Serves the Web Interface
+
+Returns the index.html file from LittleFS for the web interface.
+
+2. POST `/relay` - Control Relays
+
+Accepts query/form parameters to control relays:
+
+`relay1` - Value for relay 1
+`relay2` - Value for relay 2
+
+Example request:
+
+```bash
+curl -X POST "http://<ESP32_IP>/relay?relay1=ON&relay2=OFF"
+```
+
+#### ESP8266
+
+POST `/relay` - Control relays
+
+```bash
+curl -X POST "http://<ESP8266_IP>/relay?relay1=on&relay2=off"
+```
+
+Returns status like "0-1" (relay1 ON, relay2 OFF)
+
+GET `/status` - Check relay states
+
+```bash
+curl "http://<<ESP8266_IP>/status"
+```
+
+Returns "1-0" format (1=OFF, 0=ON)
