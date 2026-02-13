@@ -12,6 +12,16 @@ I've provided two examples for esp32 and esp8266 that you can implement on your 
 
 Create your own `bot/config.json` where you put the discord developer bot token. Once done, simply run the code on a laptop or another device like a raspy and use slash commands from discord to control everything
 
+```json
+{
+  "token": "YOUR TOKEN",
+  "clientId": "",
+  "guildId": ""
+}
+```
+
+remember to run `node deploy-commands.js` and then `node index.js`
+
 ### Voice commands
 
 Install the required python dependencies via
