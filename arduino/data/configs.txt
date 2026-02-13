@@ -1,0 +1,4 @@
+testing = true
+testing2 = false
+system1 = running
+system2 = down
